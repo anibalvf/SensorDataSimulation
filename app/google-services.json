@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "354424291566",
+    "firebase_url": "https://solardesknosql-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "solardesknosql",
+    "storage_bucket": "solardesknosql.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354424291566:android:a28bc01f5a8417674b33ff",
+        "android_client_info": {
+          "package_name": "com.example.sensordatasimulation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354424291566-pr3dsj7smi90gngrgcuvduvsqr2i8p41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxpelDoVqFfgcbLqSfYVoR5_DsWp4YLBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354424291566-pr3dsj7smi90gngrgcuvduvsqr2i8p41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
