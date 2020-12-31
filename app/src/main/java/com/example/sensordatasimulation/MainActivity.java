@@ -2,6 +2,7 @@ package com.example.sensordatasimulation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -31,5 +32,21 @@ public class MainActivity extends AppCompatActivity {
 
         ref.child("Test").child(id_test).setValue("Hola eden");
 
+    }
+
+    public void irConfig(View v){
+         Intent intent = new Intent(this,Configuracion.class);
+         startActivity(intent);
+
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

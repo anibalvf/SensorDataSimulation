@@ -40,10 +40,23 @@
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/buttonbackgroud"
+        android:onClick="irConfig"
         android:text="Configuracion"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/Test"
         app:layout_constraintStart_toStartOf="@+id/Test"
         app:layout_constraintTop_toBottomOf="@+id/Test" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Alfa version 0.1.5"
+        android:textColor="#040404"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
