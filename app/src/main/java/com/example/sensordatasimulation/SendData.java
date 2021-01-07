@@ -1,0 +1,64 @@
+package com.example.sensordatasimulation;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import static java.lang.Thread.sleep;
+
+public class SendData extends AppCompatActivity {
+    private SharedPreferences sp ;
+    private SharedPreferences.Editor se;
+    private DatabaseReference ref;
+    private StorageReference sto;
+    public static boolean stopsendingdata = false;
+    private int timeparam;
+    private HiloSendData h1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_send_data);
+        stopsendingdata = false;
+
+        sp = this.getSharedPreferences("CONFIG", this.MODE_PRIVATE);
+        ref = FirebaseDatabase.getInstance().getReference();
+        sto = FirebaseStorage.getInstance().getReference();
+        timeparam = sp.getInt("SEGUNDOS",0);
+        int minutos = sp.getInt("MINUTOS",-1);
+        if (minutos!=0 && minutos!=-1){
+            timeparam = timeparam + (minutos*60);
+        }
+
+        h1 = new HiloSendData(timeparam,ref);
+
+        startSendingData();
+
+    }
+
+    private void startSendingData(){
+        h1.start();
+    }
+
+    public void stopsenddata(View v ){
+        stopsendingdata = true;
+        Toast.makeText(this, "Fest Finalizado", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
+
+}

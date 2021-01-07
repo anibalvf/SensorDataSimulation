@@ -28,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lazarTest(View v){
-        String id_test = ref.child("test").push().getKey();
-
-        ref.child("Test").child(id_test).setValue("Hola eden");
+        Intent intent = new Intent(this,SendData.class);
+        startActivity(intent);
 
     }
 
@@ -49,4 +48,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+
+
 }

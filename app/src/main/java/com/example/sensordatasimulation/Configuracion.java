@@ -23,11 +23,8 @@ public class Configuracion extends AppCompatActivity {
         sp = this.getSharedPreferences("CONFIG", this.MODE_PRIVATE);
         se = sp.edit();
 
-
-
         getShared();
         linkView();
-
 
     }
 
@@ -92,8 +89,6 @@ public class Configuracion extends AppCompatActivity {
             segundos = tiempo;
         }
 
-
-
     }
     public void reset(View v){
         se.clear();
@@ -106,22 +101,13 @@ public class Configuracion extends AppCompatActivity {
 
     }
 
-
-
     public void guardar(View v){
         se.putInt("MINUTOS",minutos);
         se.putInt("SEGUNDOS",segundos);
 
 //        Toast.makeText(this, "Minutos: "+minutos+" Segundos: "+segundos, Toast.LENGTH_SHORT).show();
-
         se.commit();
     }
-
-
-
-
-
-
 
     @Override
     public void onBackPressed() {
