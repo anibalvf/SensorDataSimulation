@@ -50,7 +50,7 @@ public class InverterThread extends Thread implements Serializable {
     private void addInverter(){
         this.inverter.id = ref.child("Inversores").push().getKey();
 
-        ref.child("Inversores").child(this.inverter.id).setValue(inverter);
+        ref.child("Inversores").child(this.inverter.id).setValue(this.inverter);
     }
 
 }

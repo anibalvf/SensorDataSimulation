@@ -23,6 +23,7 @@ public class SendData extends AppCompatActivity {
     public static boolean stopsendingdata = false;
     private int timeparam;
     private InverterThread inverter1;
+    private StringInverterThread stringInverterThread;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +41,16 @@ public class SendData extends AppCompatActivity {
         Inverter inverter = new Inverter("1","SUNNY BOY 3.0","sunny-boy-30",502,3000);
         inverter1 = new InverterThread(timeparam,ref,inverter);
 
+        StringInverter stringInverter = new StringInverter("1", 0, 0);
+        stringInverterThread = new StringInverterThread(timeparam,ref,stringInverter);
+
         startSendingData();
 
     }
 
     private void startSendingData(){
         inverter1.start();
+        stringInverterThread.start();
     }
 
     public void stopsenddata(View v ){
