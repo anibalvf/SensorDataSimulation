@@ -80,10 +80,11 @@ public class Configuracion extends AppCompatActivity {
             minutos = tiempo;
         }else{
             tiempo = Integer.parseInt(tvsegundos.getText().toString().trim());
-            if (tiempo >0){
+            if (tiempo >1 && tiempo!= 1){
                 tiempo-=1;
             }else{
-                tiempo = 0;
+                Toast.makeText(this, "El minimo es 1 segundo", Toast.LENGTH_SHORT).show();
+                tiempo = 1;
             }
             tvsegundos.setText(Integer.toString(tiempo));
             segundos = tiempo;

@@ -22,7 +22,7 @@ public class SendData extends AppCompatActivity {
     private StorageReference sto;
     public static boolean stopsendingdata = false;
     private int timeparam;
-    private HiloSendData h1;
+    private InverterThread inverter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +37,15 @@ public class SendData extends AppCompatActivity {
         if (minutos!=0 && minutos!=-1){
             timeparam = timeparam + (minutos*60);
         }
-
-        h1 = new HiloSendData(timeparam,ref);
+        Inverter inverter = new Inverter("1","SUNNY BOY 3.0","sunny-boy-30",502,3000);
+        inverter1 = new InverterThread(timeparam,ref,inverter);
 
         startSendingData();
 
     }
 
     private void startSendingData(){
-        h1.start();
+        inverter1.start();
     }
 
     public void stopsenddata(View v ){
