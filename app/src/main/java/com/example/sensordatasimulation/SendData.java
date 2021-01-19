@@ -46,6 +46,18 @@ public class SendData extends AppCompatActivity {
 
         startSendingData();
 
+        putAlarm();
+
+
+
+    }
+
+    private void putAlarm(){
+        Alarms atest = new Alarms("","19-01-2021-12:20:00","19-01-2021-13:50:00","Test");
+        String id_alarm = ref.child("Alarms").push().getKey();
+        atest.setId(id_alarm);
+
+        ref.child("Alarms").child(id_alarm).setValue(atest);
     }
 
     private void startSendingData(){

@@ -13,6 +13,12 @@ public class StringInverter implements Serializable {
         this.panelPower = panelPower;
     }
 
+    public StringInverter() {
+        this.id = "";
+        this.numPanel = 0;
+        this.panelPower=0;
+    }
+
     public String getId() {
         return id;
     }

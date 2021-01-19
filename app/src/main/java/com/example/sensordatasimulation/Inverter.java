@@ -16,6 +16,15 @@ public class Inverter implements Serializable {
         this.port = port;
         this.maxOutput = maxOutput;
     }
+
+    public Inverter() {
+        this.id = "";
+        this.name = "";
+        this.hostName = "";
+        this.port = 0;
+        this.maxOutput = 0;
+    }
+
     public String getId() {
         return id;
     }
